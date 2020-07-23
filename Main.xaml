@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1794,3582" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1153.33333333333,3433.33333333333" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
       <x:String>System.Activities</x:String>
@@ -51,22 +51,23 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="VSS navigation" sap:VirtualizedContainerService.HintSize="915,3417" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="VSS navigation" sap:VirtualizedContainerService.HintSize="916,3228.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="index" />
+      <Variable x:TypeArguments="ui:Window" Name="VSSWindow" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Anexa a Janela do VSS " sap:VirtualizedContainerService.HintSize="873,3070" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="8bbbdd3ecfd12f13c6aeae979f417bf2" Selector="&lt;wnd app='ssexp.exe' cls='Afx:*' title='Visual SourceSafe Explorer*' /&gt;">
+    <ui:WindowScope SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" ApplicationWindow="[VSSWindow]" DisplayName="Anexa a Janela do VSS " sap:VirtualizedContainerService.HintSize="874,3136.66666666667" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="8bbbdd3ecfd12f13c6aeae979f417bf2" Selector="&lt;wnd app='ssexp.exe' cls='Afx:*' title='Visual SourceSafe Explorer*' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,2924" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="840,2990.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="anterior" />
               <Variable x:TypeArguments="x:String" Name="atual" />
@@ -77,27 +78,28 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Seta a configuração inicial para iniciar o percurso nas pastas" sap:VirtualizedContainerService.HintSize="797,1171" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence DisplayName="Seta a configuração inicial para iniciar o percurso nas pastas" sap:VirtualizedContainerService.HintSize="798,1238" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ImageFound DisplayName="Check if folder is expanded" Found="[expanded]" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+              <ui:MaximizeWindow DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="756,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" Window="[VSSWindow]" />
+              <ui:ImageFound DisplayName="Check if folder is expanded" Found="[expanded]" sap:VirtualizedContainerService.HintSize="756,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
                 <ui:ImageFound.Image>
                   <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAANCAYAAADmDU2OAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADNSURBVEhLvZFRCoQwDAV77P30aN5ij9NlxEBMkzZlawfCA5/STC11McdxNLOTpUIsf55nLSZ3Sj2E9K1GE0HnyWgpbzKUEt+77RqhHr0+u5yGb3rLAr2Mx+tC0R/yciQknU3N60JZGXJWyOIK3nkhS/GiHbgW+HybkQ6yMuRICPT5Fu+5KxTR66XLypAZIfCkQsk7L1YIZWXIGSGdsE0oK0OOhKyITY9HwwGjiZAuK0PyTW85oJcR0kL/oKVnZiQEmXeEZUIgNzk766j1BxLR42Ny5ciiAAAAAElFTkSuQmCC" />
                 </ui:ImageFound.Image>
                 <ui:ImageFound.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f8bf2ee6-538a-421e-933a-5ac702f637ba" TimeoutMS="200">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f8bf2ee6-538a-421e-933a-5ac702f637ba" TimeoutMS="1000">
                     <ui:Target.WaitForReady>
                       <InArgument x:TypeArguments="ui:WaitForReady" />
                     </ui:Target.WaitForReady>
                   </ui:Target>
                 </ui:ImageFound.Target>
               </ui:ImageFound>
-              <If Condition="[expanded]" DisplayName="Verifica se a raiz dos projetos estão expandidos" sap:VirtualizedContainerService.HintSize="755,539" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[expanded]" DisplayName="Verifica se a raiz dos projetos estão expandidos" sap:VirtualizedContainerService.HintSize="756,544" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <Sequence DisplayName="Remove a expanção da pastas" sap:VirtualizedContainerService.HintSize="376,392" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Remove a expanção da pastas" sap:VirtualizedContainerService.HintSize="376,393.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -125,7 +127,7 @@
                         </ui:Target>
                       </ui:ClickImage.Target>
                     </ui:ClickImage>
-                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Envia um enter para remover a expanção da pasta" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="enter" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Envia um enter para remover a expanção da pasta" sap:VirtualizedContainerService.HintSize="334,155.333333333333" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="enter" KeyModifiers="None" SpecialKey="True">
                       <ui:SendHotkey.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="83a64660-182e-4b83-befe-e4f35068df1f" InformativeScreenshot="2321341ffa32276619b71e6555e9099b" Selector="&lt;wnd cls='ListBox' idx='1' /&gt;&lt;ctrl idx='1' role='list item' /&gt;">
                           <ui:Target.TimeoutMS>
